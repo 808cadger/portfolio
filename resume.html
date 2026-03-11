@@ -1,0 +1,407 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>Christopher Cadger — Resume</title>
+<style>
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+  body {
+    font-family: 'Georgia', serif;
+    font-size: 11pt;
+    line-height: 1.55;
+    color: #1a1a1a;
+    background: #fff;
+    max-width: 820px;
+    margin: 0 auto;
+    padding: 48px 52px;
+  }
+
+  /* Print button — hidden when printing */
+  .print-btn {
+    display: block;
+    margin: 0 auto 28px auto;
+    padding: 10px 28px;
+    background: #1a1a1a;
+    color: #fff;
+    border: none;
+    border-radius: 6px;
+    font-size: 13px;
+    cursor: pointer;
+    font-family: -apple-system, sans-serif;
+    letter-spacing: 0.3px;
+  }
+  .print-btn:hover { background: #333; }
+  @media print {
+    .print-btn { display: none; }
+    body { padding: 0; }
+  }
+
+  h1 {
+    font-size: 26pt;
+    font-weight: 700;
+    letter-spacing: -0.5px;
+    margin-bottom: 6px;
+  }
+
+  .contact {
+    font-family: -apple-system, Arial, sans-serif;
+    font-size: 9.5pt;
+    color: #444;
+    display: flex;
+    flex-wrap: wrap;
+    gap: 4px 0;
+    margin-bottom: 18px;
+  }
+  .contact span { margin-right: 14px; }
+  .contact a { color: #1a1a1a; text-decoration: none; border-bottom: 1px solid #ccc; }
+  .contact a:hover { border-bottom-color: #1a1a1a; }
+
+  .section-title {
+    font-family: -apple-system, Arial, sans-serif;
+    font-size: 8.5pt;
+    font-weight: 700;
+    letter-spacing: 1.4px;
+    text-transform: uppercase;
+    color: #1a1a1a;
+    border-bottom: 1.5px solid #1a1a1a;
+    padding-bottom: 3px;
+    margin-top: 20px;
+    margin-bottom: 10px;
+  }
+
+  .summary {
+    font-size: 10.5pt;
+    line-height: 1.65;
+    color: #222;
+  }
+
+  /* Projects */
+  .project { margin-bottom: 14px; }
+  .project-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: baseline;
+  }
+  .project-name {
+    font-weight: 700;
+    font-size: 11pt;
+  }
+  .project-date {
+    font-family: -apple-system, Arial, sans-serif;
+    font-size: 9pt;
+    color: #555;
+    white-space: nowrap;
+  }
+  .project-subtitle {
+    font-style: italic;
+    font-size: 10pt;
+    color: #444;
+    margin-bottom: 2px;
+  }
+  .project-links {
+    font-family: -apple-system, Arial, sans-serif;
+    font-size: 8.5pt;
+    margin-bottom: 5px;
+  }
+  .project-links a { color: #1a5276; text-decoration: none; }
+  .project-links a:hover { text-decoration: underline; }
+  .project-links span { color: #aaa; margin: 0 4px; }
+  ul {
+    padding-left: 18px;
+    margin-top: 3px;
+  }
+  li {
+    font-size: 10.5pt;
+    margin-bottom: 2px;
+  }
+  .stack {
+    font-family: -apple-system, Arial, sans-serif;
+    font-size: 9pt;
+    color: #444;
+    margin-top: 3px;
+  }
+  .stack strong { color: #1a1a1a; }
+
+  /* Experience */
+  .job { margin-bottom: 13px; }
+  .job-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: baseline;
+  }
+  .job-title {
+    font-size: 11pt;
+    font-weight: 700;
+  }
+  .job-role {
+    font-weight: 400;
+    color: #333;
+  }
+  .job-date {
+    font-family: -apple-system, Arial, sans-serif;
+    font-size: 9pt;
+    color: #555;
+    white-space: nowrap;
+  }
+  .job-location {
+    font-family: -apple-system, Arial, sans-serif;
+    font-size: 9pt;
+    color: #666;
+    margin-bottom: 4px;
+  }
+
+  /* Education */
+  .edu { margin-bottom: 10px; }
+  .edu-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: baseline;
+  }
+  .edu-name { font-weight: 700; font-size: 11pt; }
+  .edu-date {
+    font-family: -apple-system, Arial, sans-serif;
+    font-size: 9pt;
+    color: #555;
+  }
+  .edu-sub { font-size: 10pt; color: #444; margin-bottom: 2px; }
+  .edu-detail { font-size: 10pt; color: #333; }
+
+  /* Skills */
+  .skills-table {
+    width: 100%;
+    border-collapse: collapse;
+    font-size: 10pt;
+  }
+  .skills-table td {
+    padding: 3px 8px 3px 0;
+    vertical-align: top;
+  }
+  .skills-table td:first-child {
+    font-family: -apple-system, Arial, sans-serif;
+    font-weight: 700;
+    font-size: 9pt;
+    white-space: nowrap;
+    width: 110px;
+    padding-top: 4px;
+  }
+</style>
+</head>
+<body>
+
+<button class="print-btn" onclick="window.print()">⬇ Download / Print PDF</button>
+
+<h1>Christopher Cadger</h1>
+<div class="contact">
+  <span>Honolulu, Hawaii</span>
+  <span>(808) 478-2996</span>
+  <span><a href="mailto:cadger808@gmail.com">cadger808@gmail.com</a></span>
+  <span><a href="https://linkedin.com/in/christopher-cadger" target="_blank">linkedin.com/in/christopher-cadger</a></span>
+  <span><a href="https://cadger808.github.io" target="_blank">cadger808.github.io</a></span>
+  <span><a href="https://github.com/cadger808" target="_blank">github.com/cadger808</a></span>
+</div>
+
+<!-- SUMMARY -->
+<div class="section-title">Summary</div>
+<p class="summary">
+  AI engineer with 25+ years of real-world project leadership, now building and shipping production AI applications.
+  IBM AI Engineering certified (2026) with hands-on experience deploying LLM-powered mobile apps using the Anthropic Claude API,
+  agentic tool-use pipelines, computer vision systems with YOLOv8, and native Android apps via Capacitor and React Native.
+  Six live AI apps shipped to production — spanning healthcare, legal, agriculture, retail, travel, and e-commerce.
+  Combines deep operational expertise in risk assessment, stakeholder management, and process optimization with a bias toward shipping working software.
+</p>
+
+<!-- PROJECTS -->
+<div class="section-title">Projects</div>
+
+<div class="project">
+  <div class="project-header">
+    <span class="project-name">time~save~shopping</span>
+    <span class="project-date">2026 – Present</span>
+  </div>
+  <div class="project-subtitle">— AI Grocery Assistant · Android</div>
+  <div class="project-links">
+    <a href="https://github.com/cadger808/time-save-shopping" target="_blank">github.com/cadger808/time-save-shopping</a>
+  </div>
+  <ul>
+    <li>Built a full-stack AI shopping assistant that auto-detects store entry via GPS geofence and launches a Claude-powered chatbot</li>
+    <li>Engineered 7 Claude tools: item finder, route optimizer, out-of-stock checker, online ordering links, store map, web search, and nearby store lookup</li>
+    <li>Implemented real-time streaming responses via Server-Sent Events (SSE) with a FastAPI backend and React Native frontend</li>
+    <li>Full-screen animated chat UI with draggable FAB, message animations, typing indicators, and context-aware suggestion chips</li>
+  </ul>
+  <div class="stack"><strong>Stack:</strong> React Native (Expo), TypeScript, FastAPI, Python, Claude claude-opus-4-6, SSE Streaming, Android</div>
+</div>
+
+<div class="project">
+  <div class="project-header">
+    <span class="project-name">CourtAide</span>
+    <span class="project-date">2025 – Present</span>
+  </div>
+  <div class="project-subtitle">— Agentic AI Legal Assistant · Android</div>
+  <div class="project-links">
+    <a href="https://github.com/cadger808/courtaide" target="_blank">github.com/cadger808/courtaide</a>
+  </div>
+  <ul>
+    <li>Built a fully agentic legal assistant — Claude auto-runs a 5-tool intake pipeline the moment a case is started, before the user types anything</li>
+    <li>Implemented 10 legal tools: case strength scoring, strategy recommendations, required forms identification, deadline calculation, statute citation, and full document generation</li>
+    <li>Animated real-time task bar (○ → ⟳ → ✓) visualizes each tool firing in sequence; supports all 50 US states and 10 legal issue types</li>
+    <li>Includes biometric authentication UI, dark navy/gold design system, and complete demo mode requiring no API key</li>
+  </ul>
+  <div class="stack"><strong>Stack:</strong> JavaScript, HTML/CSS, Claude claude-sonnet-4-6, Agentic Tool-Use, Capacitor, Android</div>
+</div>
+
+<div class="project">
+  <div class="project-header">
+    <span class="project-name">GlowAI</span>
+    <span class="project-date">2025 – Present</span>
+  </div>
+  <div class="project-subtitle">— Agentic AI Skincare App · Android</div>
+  <div class="project-links">
+    <a href="https://github.com/cadger808/glowai" target="_blank">github.com/cadger808/glowai</a>
+  </div>
+  <ul>
+    <li>Built an agentic AI skincare app using Claude Vision API with a custom 5-tool loop: skin analysis, routine builder, ingredient explainer, product recommender, and progress tracker</li>
+    <li>Implemented multi-step tool-use chaining where Claude proactively sequences actions based on user context and skin profile</li>
+    <li>Privacy-first architecture: all analysis runs via direct client-to-Anthropic API calls with no backend server and no data retention</li>
+  </ul>
+  <div class="stack"><strong>Stack:</strong> JavaScript, HTML/CSS, Claude Vision API, Capacitor, Android</div>
+</div>
+
+<div class="project">
+  <div class="project-header">
+    <span class="project-name">FarmSense</span>
+    <span class="project-date">2025 – Present</span>
+  </div>
+  <div class="project-subtitle">— AI Farm Monitoring App · Android</div>
+  <div class="project-links">
+    <a href="https://github.com/cadger808/farmsense" target="_blank">github.com/cadger808/farmsense</a>
+  </div>
+  <ul>
+    <li>Developed an AI-powered farm management assistant providing crop analysis, weather-aware recommendations, and yield optimization</li>
+    <li>Integrated Claude AI for natural language farm queries with demo mode for offline usage</li>
+  </ul>
+  <div class="stack"><strong>Stack:</strong> JavaScript, HTML/CSS, Claude AI, Capacitor, Android</div>
+</div>
+
+<div class="project">
+  <div class="project-header">
+    <span class="project-name">Archer Travel</span>
+    <span class="project-date">2025</span>
+  </div>
+  <div class="project-subtitle">— AI Identity Verification Platform</div>
+  <div class="project-links">
+    <a href="https://archertravel.vercel.app" target="_blank">archertravel.vercel.app</a>
+    <span>·</span>
+    <a href="https://github.com/cadger808/archertravel" target="_blank">github.com/cadger808/archertravel</a>
+  </div>
+  <ul>
+    <li>Developed a travel booking platform with AI-powered identity verification using Claude Vision API</li>
+    <li>Claude Vision compares a user selfie to a government-issued ID, returning a real-time JSON confidence score</li>
+    <li>Privacy-first: images processed client-side and never retained after session</li>
+  </ul>
+  <div class="stack"><strong>Stack:</strong> JavaScript, HTML/CSS, Claude Vision (claude-sonnet-4-6), Vercel</div>
+</div>
+
+<div class="project">
+  <div class="project-header">
+    <span class="project-name">Construction Safety AI</span>
+    <span class="project-date">2025</span>
+  </div>
+  <div class="project-subtitle">— Real-Time PPE Detection System</div>
+  <div class="project-links">
+    <a href="https://github.com/cadger808" target="_blank">github.com/cadger808</a>
+  </div>
+  <ul>
+    <li>Built a computer vision system using YOLOv8 to monitor construction sites for PPE compliance (hard hats, vests, goggles) in real time</li>
+    <li>Automated violation report generation, leveraging 25 years of domain expertise to tune detection priorities</li>
+  </ul>
+  <div class="stack"><strong>Stack:</strong> Python, YOLOv8, OpenCV, Ultralytics</div>
+</div>
+
+<!-- EXPERIENCE -->
+<div class="section-title">Experience</div>
+
+<div class="job">
+  <div class="job-header">
+    <span class="job-title">MTL Max Builders &nbsp;<span class="job-role">Project Manager</span></span>
+    <span class="job-date">Dec 2016 – Present</span>
+  </div>
+  <div class="job-location">Honolulu, HI</div>
+  <ul>
+    <li>Managed complex commercial build-outs and airport facility upgrades, overseeing budgets, timelines, and risk mitigation through data-driven planning</li>
+    <li>Coordinated cross-functional teams across airport administration, engineering, and tenant operations — producing stakeholder reports that translated technical constraints into business impacts</li>
+    <li>Applied process optimization and iterative feedback loops to minimize operational disruption during active facility remodels</li>
+  </ul>
+</div>
+
+<div class="job">
+  <div class="job-header">
+    <span class="job-title">HK Construction &nbsp;<span class="job-role">Superintendent</span></span>
+    <span class="job-date">Jan 2023 – Aug 2023</span>
+  </div>
+  <div class="job-location">Honolulu, HI</div>
+  <ul>
+    <li>Analyzed worker production metrics to identify inefficiencies, implementing targeted interventions that improved output</li>
+    <li>Used AutoCAD for technical spatial modeling, preventing logistical errors and clarifying specifications for field teams</li>
+    <li>Performed root cause analysis on labor and material usage data to drive cost savings and process improvements</li>
+  </ul>
+</div>
+
+<div class="job">
+  <div class="job-header">
+    <span class="job-title">Build Oahu &nbsp;<span class="job-role">Working Superintendent</span></span>
+    <span class="job-date">Jan 2021 – Jan 2022</span>
+  </div>
+  <div class="job-location">Honolulu, HI</div>
+  <ul>
+    <li>Developed comprehensive work plans from technical blueprints, aligning deliverables with engineering specs and client expectations</li>
+    <li>Led client consultations, visualizing milestones and translating complex project data for non-technical stakeholders</li>
+  </ul>
+</div>
+
+<!-- EDUCATION -->
+<div class="section-title">Education &amp; Certifications</div>
+
+<div class="edu">
+  <div class="edu-header">
+    <span class="edu-name">IBM AI Engineering Professional Certificate</span>
+    <span class="edu-date">Issued Jan 2026</span>
+  </div>
+  <div class="edu-sub">Coursera</div>
+  <div class="edu-detail">Machine learning, deep learning, neural networks, model deployment, and Python-based AI development. Built and evaluated end-to-end ML models.</div>
+</div>
+
+<div class="edu">
+  <div class="edu-header">
+    <span class="edu-name">Waipahu School for Adults</span>
+  </div>
+  <div class="edu-sub">High School Diploma</div>
+</div>
+
+<!-- SKILLS -->
+<div class="section-title">Skills</div>
+<table class="skills-table">
+  <tr>
+    <td>AI / ML</td>
+    <td>Claude AI (Anthropic API), Agentic Tool-Use, Prompt Engineering, Streaming (SSE), YOLOv8, Computer Vision, Machine Learning, Neural Networks, Deep Learning, Model Evaluation</td>
+  </tr>
+  <tr>
+    <td>Languages</td>
+    <td>Python, JavaScript, TypeScript, HTML/CSS, SQL</td>
+  </tr>
+  <tr>
+    <td>Frameworks</td>
+    <td>React Native (Expo), FastAPI, Capacitor</td>
+  </tr>
+  <tr>
+    <td>Tools</td>
+    <td>OpenCV, Vercel, GitHub, Android Studio, AutoCAD, Expo EAS</td>
+  </tr>
+  <tr>
+    <td>Professional</td>
+    <td>Project Management, Risk Assessment, Stakeholder Communication, Process Optimization, Agile Coordination, Data Analysis</td>
+  </tr>
+</table>
+
+</body>
+</html>
