@@ -27,3 +27,4 @@ Real-time computer vision system monitoring job sites for PPE compliance using Y
 - Email: cadger808@gmail.com
 - LinkedIn: [linkedin.com/in/christopher-cadger](https://linkedin.com/in/christopher-cadger)
 - GitHub: [github.com/808cadger](https://github.com/808cadger)
+
