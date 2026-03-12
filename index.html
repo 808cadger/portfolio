@@ -276,6 +276,10 @@
       .about-stats { grid-template-columns: 1fr 1fr; }
     }
   </style>
+  <link rel="manifest" href="manifest.json">
+  <meta name="theme-color" content="#00c8ff">
+  <meta name="mobile-web-app-capable" content="yes">
+  <link rel="apple-touch-icon" href="icons/icon-192.png">
 </head>
 <body>
 
@@ -613,5 +617,14 @@
     <p>Built by Christopher Cadger &nbsp;·&nbsp; Honolulu, Hawaii &nbsp;·&nbsp; 2026</p>
   </footer>
 
+  <script>
+    if ("serviceWorker" in navigator) {
+      window.addEventListener("load", () => {
+        navigator.serviceWorker.register("/sw.js")
+          .then(r => console.log("SW registered:", r.scope))
+          .catch(e => console.error("SW error:", e));
+      });
+    }
+  </script>
 </body>
 </html>
