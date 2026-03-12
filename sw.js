@@ -9,7 +9,10 @@ const PRECACHE = [
 
 self.addEventListener('install', e => {
   e.waitUntil(
-    caches.open(CACHE).then(c => c.addAll(PRECACHE)).then(() => self.skipWaiting())
+    caches.open(CACHE)
+      .then(c => c.addAll(PRECACHE))
+      .then(() => self.skipWaiting())
+      .catch(err => console.warn('SW install cache failed:', err))
   );
 });
 
@@ -28,7 +31,7 @@ self.addEventListener('fetch', e => {
       const fresh = fetch(e.request).then(res => {
         if (res && res.status === 200 && res.type === 'basic') {
           const clone = res.clone();
-          caches.open(CACHE).then(c => c.put(e.request, clone));
+          caches.open(CACHE).then(c => c.put(e.request, clone)).catch(() => {});
         }
         return res;
       }).catch(() => cached);
