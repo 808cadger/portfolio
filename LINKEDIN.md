@@ -1,142 +1,116 @@
-# LinkedIn Rewrite — Christopher Cadger
-## Optimized for Junior AI / ML Engineering Roles
+# LinkedIn Profile — Christopher Cadger
+## Copy-paste ready. Update your profile section by section.
 
 ---
 
-## HEADLINE (220 chars max — pick one)
+## HEADLINE (copy one — paste into LinkedIn headline field)
 
-**Option A — Skills-first (recommended for recruiters):**
+**Recommended:**
 ```
-AI Engineer | Building Production Apps with Claude AI & Python | IBM AI Engineering Certified | Open to Junior AI/ML Roles
-```
-
-**Option B — Story-driven:**
-```
-Junior AI Engineer | Shipped 3 AI Apps to Production | IBM Certified | Computer Vision · LLM APIs · Agentic AI | Honolulu, HI
+AI Engineer | 7 Shipped Apps | IBM AI Engineering Certified | Claude AI · Python · Android | Open to Junior AI/ML Roles
 ```
 
-**Option C — Bold & direct:**
+**Alternative:**
 ```
-AI Engineer in Transition | IBM AI Engineering Certified (2025) | Claude AI · YOLOv8 · Python | Seeking Junior AI/ML Roles
+Junior AI Engineer | Building Real AI Products | IBM Certified | Fraud Detection · LLMs · Computer Vision | Honolulu, HI
 ```
-
-> **Why these work:** Recruiters scan for certification names, tool keywords (Claude, YOLOv8, Python),
-> and "open to" signals. Putting "IBM AI Engineering" in the headline outperforms burying it in the body.
 
 ---
 
-## ABOUT SECTION (2,000 chars max)
+## ABOUT SECTION (copy everything between the lines)
 
 ```
-I'm an AI engineer with 25+ years of real-world project management experience — and 3 production
-AI apps deployed in 2025.
+I'm an AI engineer with 25+ years of real-world project leadership — and 7 production AI apps shipped.
 
-After earning my IBM AI Engineering Professional Certificate (Coursera, 2025), I didn't just study
-AI — I shipped it:
+After earning my IBM AI Engineering Professional Certificate, I didn't just study AI — I built and deployed it:
 
-• GlowAI: An agentic AI skincare app built with Anthropic's Claude API and Capacitor for Android.
-  Features a multi-step tool-use loop where the AI proactively chains 5 custom tools — skin analysis,
-  routine builder, ingredient explainer, product recommender, and progress tracker.
-  → Live: quickapp-three.vercel.app
+🛡️ HaloGuard — A background fraud protection app with a floating halo indicator. Detects scams in real time using Claude AI before you send money or click a link. Includes a full personalized AI assistant that learns who you are via onboarding Q&A and social linking.
+→ codeberg.org/cadger808/haloguard
 
-• Archer Travel: A travel booking platform with AI identity verification. Claude Vision compares
-  a user's selfie to their government ID in real time, returning a confidence score —
-  all privacy-first, processed client-side only.
-  → Live: archertravel.vercel.app
+⚖️ CourtAide — A fully agentic AI legal assistant. Claude auto-runs a 5-tool intake pipeline the moment a case starts — strategy, forms, deadlines, statutes, and document generation.
+→ codeberg.org/cadger808/courtaide
 
-• Construction Safety AI: A YOLOv8 computer vision system that monitors job sites for PPE
-  compliance (hard hats, vests, goggles) and generates violation reports automatically.
-  Built with 25 years of domain expertise baked in.
+🛍️ time~save~shopping — AI grocery assistant that detects when you walk into a store via GPS geofence and launches a Claude-powered chatbot with 7 custom tools.
+→ codeberg.org/cadger808/time-save-shopping
+
+✨ GlowAI — Agentic AI skincare app using Claude Vision. Multi-step tool-use loop: skin analysis, routine builder, ingredient explainer, product recommender, and progress tracker.
+→ codeberg.org/cadger808/glowai
+
+🌱 FarmSense — AI farm monitoring assistant with crop analysis, weather-aware recommendations, and yield optimization powered by Claude.
+→ codeberg.org/cadger808/farmsense
+
+✈️ Archer Travel — AI travel platform with Claude Vision identity verification. Matches selfies to government IDs in real time with a confidence score.
+→ codeberg.org/cadger808/archertravel
+
+🧠 simper~decide — AI life advisor across 20 domains: legal, finance, medical, career, relationships, and more.
+→ codeberg.org/cadger808/simper-decide
 
 What I bring that most junior candidates don't:
-→ Decade of decision-making under pressure and real deadlines
-→ Client-facing communication and stakeholder management
-→ A bias toward shipping, not just learning
+→ 25 years of managing complex projects under real deadlines
+→ Construction domain expertise — rare in AI, valuable for safety/compliance AI
+→ A bias toward shipping working software, not just learning
 
-I'm actively looking for junior AI/ML engineering, AI implementation, or technical AI operations roles.
-If you're building something with LLMs, computer vision, or AI tooling — let's talk.
+Actively looking for junior AI/ML engineering, AI implementation, or technical AI operations roles.
+If you're building something with LLMs, computer vision, or agentic AI — let's talk.
 
-📧 cadger808@gmail.com  |  📍 Honolulu, Hawaii  |  🐙 codeberg.org/cadger808  |  🌐 808cadger.github.io
+📧 cadger808@gmail.com
+📍 Pearl City, Hawaii (open to remote)
+🗂️ codeberg.org/cadger808
 ```
 
 ---
 
-## EXPERIENCE SECTION
+## EXPERIENCE — Add this as your top role
 
-### Entry to add (new role at top):
+**Title:** AI Engineer — Independent Projects
+**Company:** Self-Employed
+**Dates:** 2025 – Present
+**Location:** Pearl City, Hawaii · Remote
 
-**Title:** AI Engineer (Independent Projects)
-**Company:** Self-Employed / Portfolio Projects
-**Dates:** Jan 2025 – Present
-**Location:** Honolulu, Hawaii
-
-**Description:**
 ```
-Building and deploying production AI applications independently, focused on LLM integrations
-and computer vision systems.
+Building and shipping production AI applications using Anthropic's Claude API, Python, and Android/PWA tech.
 
-• Developed GlowAI — an agentic AI skincare assistant using Anthropic's Claude API with a
-  custom 5-tool agentic loop; deployed to Vercel and packaged for Android via Capacitor
-• Built Archer Travel — AI identity verification system using Claude Vision to match selfies
-  to government IDs with real-time confidence scoring
-• Created Construction Safety AI — real-time PPE detection system using YOLOv8 and OpenCV
-  for construction site safety monitoring and automated violation reporting
-• Stack: Python, JavaScript, Anthropic API, YOLOv8, OpenCV, Capacitor, Vercel
+• HaloGuard — Background fraud detection app with floating halo UI, paste-detection scam scanner, and personalized AI assistant (Claude claude-sonnet-4-6, Capacitor, PWA)
+• CourtAide — Agentic AI legal assistant with 5-tool auto-intake pipeline and real-time task visualization
+• time~save~shopping — Full-stack AI grocery app with GPS geofencing, SSE streaming, and 7 Claude tools (React Native, FastAPI, Python)
+• GlowAI — Agentic skincare AI using Claude Vision with multi-step tool chaining
+• Construction Safety AI — Real-time PPE detection using YOLOv8 and OpenCV (25 years domain expertise applied)
+
+Stack: Python · JavaScript · TypeScript · Claude API · React Native · FastAPI · Capacitor · Android · YOLOv8
 ```
 
 ---
 
-### Working Superintendent — update the title line
+## FEATURED SECTION — Pin these links
 
-**Old:** "Working Superintendent, Build Oahu"
-**New title to show:** Working Superintendent (Construction Project Management)
+1. **My AI Projects** → https://codeberg.org/cadger808 (label: "7 Shipped AI Apps — Codeberg")
+2. **HaloGuard** → https://codeberg.org/cadger808/haloguard (label: "HaloGuard — AI Fraud Protection App")
+3. **CourtAide** → https://codeberg.org/cadger808/courtaide (label: "CourtAide — Agentic AI Legal Assistant")
+4. **Portfolio** → https://cadger808.github.io (label: "AI Engineering Portfolio")
 
-**Add to description (under existing bullets):**
+---
+
+## SKILLS — Add these (recruiters search by keyword)
+
 ```
-Transferable to AI/Tech: Managing complex, multi-variable projects with shifting constraints
-directly parallels agile software development — scheduling, risk mitigation, stakeholder
-communication, and iterative problem-solving are core to both.
+Python · JavaScript · TypeScript · Claude AI (Anthropic API) · Large Language Models (LLMs)
+Agentic AI · Prompt Engineering · Computer Vision · YOLOv8 · OpenCV
+React Native · FastAPI · Capacitor · Android Development · PWA
+Machine Learning · Deep Learning · Neural Networks · IBM AI Engineering
+API Integration · Streaming (SSE) · Project Management · Risk Assessment
 ```
 
 ---
 
-## SKILLS SECTION — Add these (recruiters search by keyword)
+## EDUCATION — Verify this is showing
 
-Priority skills to add (in this order):
-1. Python
-2. Machine Learning
-3. Artificial Intelligence (AI)
-4. Large Language Models (LLMs)
-5. Computer Vision
-6. Anthropic Claude API
-7. YOLOv8
-8. Prompt Engineering
-9. API Integration
-10. Capacitor
-11. Vercel
-12. OpenCV
-13. IBM AI Engineering
-14. Neural Networks
-15. Deep Learning
+**IBM AI Engineering Professional Certificate**
+Coursera · Issued January 2026
+Skills: Machine learning, deep learning, neural networks, Python, model deployment
 
 ---
 
-## FEATURED SECTION (add links to pin at top of profile)
+## PROFILE URL
 
-Pin these 4 links as "Featured" items:
-1. **Portfolio** → https://808cadger.github.io (label: "My AI Engineering Portfolio")
-2. **GlowAI** → https://quickapp-three.vercel.app (label: "GlowAI — Agentic AI Skincare App")
-3. **Archer Travel** → https://archertravel.vercel.app (label: "Archer Travel — AI Identity Verification")
-4. **GitHub** → https://codeberg.org/cadger808 (label: "My AI Projects on GitHub")
-
----
-
-## PROFILE PHOTO & BANNER TIPS
-- Profile photo: professional headshot, good lighting, plain background
-- Banner image: something Hawaii-themed or tech-themed (dark gradient with "AI Engineer | Honolulu, HI")
-
----
-
-## URL
-Change your LinkedIn URL to: linkedin.com/in/christophercadger or linkedin.com/in/cadger808
-(Custom URLs look cleaner on resumes)
+Change to: `linkedin.com/in/cadger808` or `linkedin.com/in/christopher-cadger`
+(Settings → Edit public profile → Edit URL)
