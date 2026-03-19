@@ -56,7 +56,7 @@ What I bring that most junior candidates don't:
 I'm actively looking for junior AI/ML engineering, AI implementation, or technical AI operations roles.
 If you're building something with LLMs, computer vision, or AI tooling — let's talk.
 
-📧 cadger808@gmail.com  |  📍 Honolulu, Hawaii  |  🐙 github.com/808cadger  |  🌐 808cadger.github.io
+📧 cadger808@gmail.com  |  📍 Honolulu, Hawaii  |  🐙 codeberg.org/cadger808  |  🌐 808cadger.github.io
 ```
 
 ---
@@ -127,7 +127,7 @@ Pin these 4 links as "Featured" items:
 1. **Portfolio** → https://808cadger.github.io (label: "My AI Engineering Portfolio")
 2. **GlowAI** → https://quickapp-three.vercel.app (label: "GlowAI — Agentic AI Skincare App")
 3. **Archer Travel** → https://archertravel.vercel.app (label: "Archer Travel — AI Identity Verification")
-4. **GitHub** → https://github.com/808cadger (label: "My AI Projects on GitHub")
+4. **GitHub** → https://codeberg.org/cadger808 (label: "My AI Projects on GitHub")
 
 ---
 
