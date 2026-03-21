@@ -70,9 +70,10 @@ contextBridge.exposeInMainWorld('electronAPI', {
     delete: key        => ipcRenderer.invoke('store:delete', key),
     clear:  ()         => ipcRenderer.invoke('store:clear')
   },
-  onNavigate:      cb => ipcRenderer.on('navigate', (_, screen) => cb(screen)),
-  openExternal:    url => ipcRenderer.invoke('shell:openExternal', url),
-  onUpdateReady:   cb => ipcRenderer.on('update:ready', cb),
+  onNavigate:         cb => ipcRenderer.on('navigate', (_, screen) => cb(screen)),
+  openExternal:       url => ipcRenderer.invoke('shell:openExternal', url),
+  onUpdateAvailable:  cb => ipcRenderer.on('update:available', cb),
+  onUpdateReady:      cb => ipcRenderer.on('update:ready', cb),
   installUpdate:   () => ipcRenderer.invoke('update:install'),
   version:         () => ipcRenderer.invoke('app:version'),
   platform: process.platform,
