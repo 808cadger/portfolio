@@ -1,6 +1,6 @@
 # Christopher Cadger — AI Engineer Portfolio
 
-> Live site: [808cadger.github.io](https://808cadger.github.io)
+> Live site: codegrid.org/cadger808
 
 AI engineer based in Honolulu, Hawaii. IBM AI Engineering certified (2025), building and shipping production AI applications with Claude AI, Python, and computer vision.
 
@@ -26,5 +26,5 @@ Real-time computer vision system monitoring job sites for PPE compliance using Y
 ## Contact
 - Email: cadger808@gmail.com
 - LinkedIn: [linkedin.com/in/christopher-cadger](https://linkedin.com/in/christopher-cadger)
-- GitHub: [github.com/808cadger](https://github.com/808cadger)
+- GitHub: codegrid.org/cadger808
 
