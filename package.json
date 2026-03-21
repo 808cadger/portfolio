@@ -1,0 +1,56 @@
+{
+  "name": "portfolio",
+  "version": "1.0.0",
+  "description": "Christopher Cadger — AI Engineer Portfolio",
+  "main": "electron/main.js",
+  "author": "Christopher Cadger <cadger808@codeberg.org>",
+  "license": "UNLICENSED",
+  "scripts": {
+    "electron": "electron .",
+    "electron:dev": "NODE_ENV=development electron .",
+    "electron:build": "electron-builder --linux",
+    "electron:dist": "electron-builder --linux AppImage rpm"
+  },
+  "dependencies": {
+    "electron-store": "^8.2.0",
+    "electron-updater": "^6.3.9"
+  },
+  "devDependencies": {
+    "electron": "^33.3.1",
+    "electron-builder": "^25.1.8"
+  },
+  "build": {
+    "appId": "com.cadger808.portfolio",
+    "productName": "Christopher Cadger Portfolio",
+    "copyright": "Copyright © 2025 Christopher Cadger",
+    "directories": {
+      "output": "dist-electron",
+      "buildResources": "icons"
+    },
+    "files": [
+      "index.html",
+      "resume.html",
+      "Christopher-Cadger-Resume.pdf",
+      "manifest.json",
+      "sw.js",
+      "icons/**",
+      "electron/**",
+      "!node_modules/**",
+      "!dist-electron/**"
+    ],
+    "linux": {
+      "target": ["AppImage", "rpm"],
+      "category": "Utility",
+      "icon": "icons/icon-512.png",
+      "desktop": {
+        "Name": "Christopher Cadger Portfolio",
+        "Comment": "AI Engineer Portfolio",
+        "Categories": "Utility;Development"
+      }
+    },
+    "publish": {
+      "provider": "generic",
+      "url": "https://codeberg.org/cadger808/portfolio/releases/download/latest/"
+    }
+  }
+}
