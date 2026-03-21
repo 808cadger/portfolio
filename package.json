@@ -29,6 +29,7 @@
     },
     "files": [
       "index.html",
+      "api-client.js",
       "resume.html",
       "Christopher-Cadger-Resume.pdf",
       "manifest.json",
