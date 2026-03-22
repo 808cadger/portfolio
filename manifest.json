@@ -2,12 +2,12 @@
   "name": "Christopher Cadger — AI Engineer",
   "short_name": "Cadger Portfolio",
   "description": "AI Engineer portfolio — building intelligent apps with Claude AI, Python, and computer vision",
-  "start_url": "/index.html",
+  "start_url": "./index.html",
   "display": "standalone",
   "orientation": "portrait",
   "theme_color": "#00c8ff",
   "background_color": "#080c14",
-  "scope": "/",
+  "scope": "./",
   "icons": [
     {
       "src": "icons/icon-192.png",
