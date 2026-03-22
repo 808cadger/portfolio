@@ -2,7 +2,6 @@ const CACHE = 'v1-portfolio';
 const PRECACHE = [
   './',
   './index.html',
-  './api-client.js',
   './manifest.json',
   './avatar-widget.js',
   './share-widget.js',
