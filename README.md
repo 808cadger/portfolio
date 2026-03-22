@@ -1,39 +1,53 @@
 # Christopher Cadger — AI Engineer Portfolio
 
-> Live site: [cadger808.codeberg.page/portfolio](https://cadger808.codeberg.page/portfolio)
+> AI engineer based in Honolulu, Hawaii. Building and shipping production AI apps with Claude AI, Python, and computer vision.
 
-AI engineer based in Honolulu, Hawaii. IBM AI Engineering certified (2025), building and shipping production AI applications with Claude AI, Python, and computer vision.
+[**Live Site →**](https://cadger808.codeberg.page/portfolio) · [Resume (PDF)](https://cadger808.codeberg.page/portfolio/Christopher-Cadger-Resume.pdf) · [Codeberg](https://codeberg.org/cadger808)
 
-## Projects
+---
 
-### [GlowAI](https://cadger808.codeberg.page/glowai) — Agentic AI Skincare App
-AI-powered skincare assistant with an agentic Claude API tool-use loop. Packaged as a native Android app via Capacitor.
-- Claude AI · Agentic Tool-Use · JavaScript · Capacitor
-- [Codeberg](https://codeberg.org/cadger808/glowai)
+## Apps
 
-### [Archer Travel](https://cadger808.codeberg.page/archertravel) — AI Identity Verification
-Travel booking platform using Claude Vision to match selfies against government IDs in real time.
-- Claude Vision · JavaScript
-- [Codeberg](https://codeberg.org/cadger808/archertravel)
+| App | What it does | Install |
+|-----|-------------|---------|
+| **GlowAI** | AI skin analysis — Claude Vision scan, personalized routines, progress tracking | [PWA](https://cadger808.codeberg.page/glowai) · [APK](https://codeberg.org/cadger808/glowai/releases) |
+| **ArcherTravel** | AI travel booking + Claude Vision ID verification | [PWA](https://cadger808.codeberg.page/archertravel) · [APK](https://codeberg.org/cadger808/archertravel/releases) |
+| **CourtAide** | AI legal assistant for pro se court filings | [PWA](https://cadger808.codeberg.page/courtaide) · [APK](https://codeberg.org/cadger808/courtaide/releases) |
+| **FarmSense** | AI farm monitoring — crop health, pest ID, harvest planner | [PWA](https://cadger808.codeberg.page/farmsense) · [APK](https://codeberg.org/cadger808/farmsense/releases) |
+| **time~save~shopping** | AI grocery assistant with GPS store detection | [APK](https://codeberg.org/cadger808/time-save-shopping/releases) |
 
-### [CourtAide](https://cadger808.codeberg.page/courtaide) — AI Legal Assistant
-Pro se court filing assistant powered by an agentic Claude loop with legal research tools.
-- Claude AI · Agentic Tools · JavaScript
-- [Codeberg](https://codeberg.org/cadger808/courtaide)
+All PWA apps install in one tap — no app store, no account. Just open the link and tap "Add to Home Screen."
 
-### [FarmSense](https://cadger808.codeberg.page/farmsense) — AI Farm Monitor
-AI crop management assistant with agentic Claude loop for plant health, pest threats, and soil conditions.
-- Claude AI · Agentic Tools · JavaScript
-- [Codeberg](https://codeberg.org/cadger808/farmsense)
+---
 
-### [Construction Safety AI](https://codeberg.org/cadger808) — PPE Detection
-Real-time computer vision system monitoring job sites for PPE compliance using YOLOv8.
-- Python · YOLOv8 · OpenCV · Ultralytics
+## Tech stack
 
-## Tech Stack
-`Python` `JavaScript` `Claude AI (Anthropic)` `YOLOv8` `OpenCV` `Capacitor` `Codeberg`
+`Claude AI (Anthropic)` · `Python` · `JavaScript` · `Capacitor` · `Electron` · `React Native / Expo` · `FastAPI` · `TensorFlow Lite` · `YOLOv8`
+
+---
+
+## Install portfolio site
+
+**PWA:** Open [cadger808.codeberg.page/portfolio](https://cadger808.codeberg.page/portfolio) → "Add to Home Screen"
+
+**Linux desktop:** Download `.AppImage` or `.rpm` from [Releases](https://codeberg.org/cadger808/portfolio/releases)
+
+---
+
+## Dev quick start
+
+```bash
+git clone https://codeberg.org/cadger808/portfolio.git
+cd portfolio && npm install
+
+npx serve .             # browser dev
+npm run electron:dist   # Electron build
+```
+
+---
 
 ## Contact
+
 - Email: cadger808@gmail.com
 - LinkedIn: [linkedin.com/in/christopher-cadger](https://linkedin.com/in/christopher-cadger)
 - Codeberg: [codeberg.org/cadger808](https://codeberg.org/cadger808)
