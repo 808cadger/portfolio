@@ -1,107 +1,180 @@
+/**
+ * share-widget.js — Floating Share Widget
+ * Bottom-left corner: shows PWA share URL + copy/share/install actions.
+ * Per-app URL read from <meta name="share-url"> or falls back to window.SHARE_URL.
+ */
 (function () {
+  'use strict';
 
-  // App metadata — auto-detected from manifest.json or page title
-  function getAppName() {
-    var el = document.querySelector('meta[name="application-name"]');
-    if (el) return el.content;
-    try {
-      // try manifest
-      var link = document.querySelector('link[rel="manifest"]');
-      if (!link) return document.title || 'App';
-    } catch(e) {}
-    return document.title || 'App';
+  /* ─── Config ─────────────────────────────────────────────────── */
+  function getShareUrl() {
+    var m = document.querySelector('meta[name="share-url"]');
+    if (m && m.content) return m.content;
+    return window.SHARE_URL || 'https://cadger808.codeberg.page/glowai';
+  }
+  function getShareTitle() {
+    var m = document.querySelector('meta[name="application-name"]');
+    return (m && m.content) ? m.content : (document.title || 'App');
+  }
+  function getShareText() {
+    var m = document.querySelector('meta[name="description"]');
+    return (m && m.content) ? m.content : 'Check out this free AI app!';
   }
 
-  function getShareURL() {
-    // Use canonical or current URL
-    var canon = document.querySelector('link[rel="canonical"]');
-    return canon ? canon.href : window.location.href;
-  }
-
+  /* ─── Styles ──────────────────────────────────────────────────── */
   var CSS = [
-    '.shw{position:fixed;bottom:20px;left:16px;z-index:99999}',
-    '.shw-btn{width:40px;height:40px;border-radius:50%;background:#0a0e1a;border:1px solid #4fc3f7;',
-    'color:#4fc3f7;font-size:18px;cursor:pointer;display:flex;align-items:center;justify-content:center;',
-    'box-shadow:0 0 12px rgba(79,195,247,0.4);transition:transform 0.15s,box-shadow 0.15s}',
-    '.shw-btn:hover{transform:scale(1.1);box-shadow:0 0 20px rgba(79,195,247,0.6)}',
-    '.shw-btn:active{transform:scale(0.92)}',
-    '.shw-toast{position:fixed;bottom:70px;left:16px;background:#0a0e1a;border:1px solid #4fc3f7;',
-    'color:#e3f2fd;font-size:9px;padding:5px 10px;border-radius:8px;opacity:0;pointer-events:none;',
-    'transition:opacity 0.3s;z-index:99999}',
-    '.shw-toast.show{opacity:1}',
+    '.sw-wrap{position:fixed;bottom:22px;left:18px;z-index:99998;display:flex;flex-direction:column;align-items:flex-start;gap:8px;font-family:-apple-system,BlinkMacSystemFont,"Inter",sans-serif}',
+    /* FAB button */
+    '.sw-fab{width:52px;height:52px;border-radius:50%;background:linear-gradient(135deg,#1a1a2e 0%,#16213e 100%);border:2px solid rgba(255,255,255,0.15);box-shadow:0 4px 20px rgba(0,0,0,0.45);cursor:pointer;display:flex;align-items:center;justify-content:center;transition:transform .2s,box-shadow .2s;outline:none}',
+    '.sw-fab:hover{transform:scale(1.08);box-shadow:0 6px 24px rgba(0,0,0,0.55)}',
+    '.sw-fab svg{width:24px;height:24px}',
+    /* Popup card */
+    '.sw-card{background:#1a1a2e;border:1px solid rgba(255,255,255,0.12);border-radius:16px;padding:16px;width:240px;box-shadow:0 8px 32px rgba(0,0,0,0.6);display:none;flex-direction:column;gap:10px}',
+    '.sw-card.open{display:flex}',
+    '.sw-label{color:rgba(255,255,255,0.5);font-size:10px;letter-spacing:.08em;text-transform:uppercase;margin:0}',
+    '.sw-url{color:#fff;font-size:12px;word-break:break-all;background:rgba(255,255,255,0.06);border-radius:8px;padding:8px 10px;line-height:1.4;margin:0}',
+    '.sw-actions{display:flex;gap:8px}',
+    '.sw-btn{flex:1;padding:9px 0;border-radius:10px;border:none;cursor:pointer;font-size:12px;font-weight:600;letter-spacing:.02em;transition:opacity .15s}',
+    '.sw-btn:hover{opacity:.85}',
+    '.sw-btn.copy{background:rgba(255,255,255,0.1);color:#fff}',
+    '.sw-btn.share{background:linear-gradient(135deg,var(--sw-accent,#6366f1),var(--sw-accent2,#8b5cf6));color:#fff}',
+    '.sw-install{width:100%;padding:9px 0;border-radius:10px;border:1px solid rgba(255,255,255,0.15);background:transparent;color:rgba(255,255,255,0.7);font-size:12px;font-weight:600;cursor:pointer;transition:background .15s,color .15s;display:none}',
+    '.sw-install:hover{background:rgba(255,255,255,0.08);color:#fff}',
+    '.sw-install.visible{display:block}',
+    '.sw-toast{position:fixed;bottom:90px;left:18px;background:rgba(30,30,50,0.95);color:#fff;padding:8px 14px;border-radius:10px;font-size:13px;z-index:100000;opacity:0;transform:translateY(6px);transition:opacity .25s,transform .25s;pointer-events:none}',
+    '.sw-toast.show{opacity:1;transform:translateY(0)}'
   ].join('');
 
+  /* ─── Build DOM ───────────────────────────────────────────────── */
   function build() {
-    if (document.getElementById('shw-btn')) return;
+    if (document.getElementById('sw-wrap')) return;
 
-    if (!document.getElementById('shw-css')) {
-      var s = document.createElement('style');
-      s.id = 'shw-css'; s.textContent = CSS;
-      document.head.appendChild(s);
-    }
+    var url   = getShareUrl();
+    var title = getShareTitle();
+    var text  = getShareText();
+
+    // Accent color from meta (matches per-app brand) or default purple
+    var accentMeta = document.querySelector('meta[name="theme-color"]');
+    var accent = (accentMeta && accentMeta.content) ? accentMeta.content : '#6366f1';
+
+    var style = document.createElement('style');
+    style.textContent = CSS;
+    document.head.appendChild(style);
 
     var wrap = document.createElement('div');
-    wrap.className = 'shw';
+    wrap.id = 'sw-wrap';
+    wrap.className = 'sw-wrap';
+    wrap.style.setProperty('--sw-accent', accent);
+    wrap.style.setProperty('--sw-accent2', accent + 'bb');
 
-    var btn = document.createElement('button');
-    btn.id = 'shw-btn';
-    btn.className = 'shw-btn';
-    btn.setAttribute('aria-label', 'Share this app');
-    btn.innerHTML = '&#8679;'; // ↗ share icon
+    var card = document.createElement('div');
+    card.className = 'sw-card';
+    card.innerHTML =
+      '<p class="sw-label">Share this app</p>' +
+      '<p class="sw-url">' + url + '</p>' +
+      '<div class="sw-actions">' +
+        '<button class="sw-btn copy" id="sw-copy">Copy link</button>' +
+        (navigator.share ? '<button class="sw-btn share" id="sw-share">Share</button>' : '') +
+      '</div>' +
+      '<button class="sw-install" id="sw-install">+ Add to Home Screen</button>';
 
-    var toast = document.createElement('div');
-    toast.className = 'shw-toast';
-    toast.textContent = 'Link copied!';
+    var fab = document.createElement('button');
+    fab.className = 'sw-fab';
+    fab.setAttribute('aria-label', 'Share app');
+    fab.innerHTML =
+      '<svg viewBox="0 0 24 24" fill="none" stroke="rgba(255,255,255,0.9)" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">' +
+        '<circle cx="18" cy="5" r="3"/><circle cx="6" cy="12" r="3"/><circle cx="18" cy="19" r="3"/>' +
+        '<line x1="8.59" y1="13.51" x2="15.42" y2="17.49"/><line x1="15.41" y1="6.51" x2="8.59" y2="10.49"/>' +
+      '</svg>';
 
-    wrap.appendChild(btn);
+    wrap.appendChild(card);
+    wrap.appendChild(fab);
     document.body.appendChild(wrap);
+
+    // Toast
+    var toast = document.createElement('div');
+    toast.className = 'sw-toast';
+    toast.id = 'sw-toast';
     document.body.appendChild(toast);
 
-    btn.addEventListener('click', function () {
-      var name = getAppName();
-      var url  = getShareURL();
-      var text = 'Check out ' + name + ' — ' + url;
-
-      // Native share sheet (Android/iOS) — works in Capacitor
-      if (navigator.share) {
-        navigator.share({ title: name, text: text, url: url })
-          .catch(function () {}); // user dismissed — ignore
-        return;
+    /* ─── Install prompt ──────────────────────────────────────── */
+    var deferredPrompt = null;
+    window.addEventListener('beforeinstallprompt', function (e) {
+      e.preventDefault();
+      deferredPrompt = e;
+      var btn = document.getElementById('sw-install');
+      if (btn) btn.classList.add('visible');
+    });
+    document.addEventListener('click', function (e) {
+      if (e.target && e.target.id === 'sw-install' && deferredPrompt) {
+        deferredPrompt.prompt();
+        deferredPrompt.userChoice.then(function () { deferredPrompt = null; });
       }
+    });
 
-      // Fallback: copy to clipboard then show toast
-      if (navigator.clipboard && navigator.clipboard.writeText) {
-        navigator.clipboard.writeText(url).then(function () {
-          showToast(toast);
-        }).catch(function () {
-          fallbackShare(name, url);
-        });
-      } else {
-        fallbackShare(name, url);
+    /* ─── Toggle ──────────────────────────────────────────────── */
+    fab.addEventListener('click', function (e) {
+      e.stopPropagation();
+      card.classList.toggle('open');
+    });
+    document.addEventListener('click', function (e) {
+      if (!wrap.contains(e.target)) card.classList.remove('open');
+    });
+
+    /* ─── Copy ────────────────────────────────────────────────── */
+    document.addEventListener('click', function (e) {
+      if (e.target && e.target.id === 'sw-copy') {
+        try {
+          navigator.clipboard.writeText(url).then(function () {
+            showSwToast('Link copied!');
+          }).catch(function () { legacyCopy(url); });
+        } catch (_) { legacyCopy(url); }
+      }
+    });
+
+    /* ─── Web Share ───────────────────────────────────────────── */
+    document.addEventListener('click', function (e) {
+      if (e.target && e.target.id === 'sw-share') {
+        navigator.share({ title: title, text: text, url: url }).catch(function () {});
       }
     });
   }
 
-  function showToast(toast) {
-    toast.classList.add('show');
-    setTimeout(function () { toast.classList.remove('show'); }, 2000);
+  function showSwToast(msg) {
+    var t = document.getElementById('sw-toast');
+    if (!t) return;
+    t.textContent = msg;
+    t.classList.add('show');
+    setTimeout(function () { t.classList.remove('show'); }, 2200);
   }
 
-  function fallbackShare(name, url) {
-    // Open SMS + email chooser as last resort
-    var encoded = encodeURIComponent(name + ' — ' + url);
-    var a = document.createElement('a');
-    a.href = 'mailto:?subject=' + encodeURIComponent(name) + '&body=' + encoded;
-    a.style.display = 'none';
-    document.body.appendChild(a);
-    a.click();
-    document.body.removeChild(a);
+  function legacyCopy(url) {
+    var el = document.createElement('textarea');
+    el.value = url;
+    el.style.cssText = 'position:fixed;left:-9999px;opacity:0';
+    document.body.appendChild(el);
+    el.select();
+    try { document.execCommand('copy'); showSwToast('Link copied!'); } catch (_) {}
+    el.remove();
   }
 
+  /* ─── Init ────────────────────────────────────────────────────── */
   if (document.readyState === 'loading') {
     document.addEventListener('DOMContentLoaded', build);
   } else {
     build();
   }
+
+  // Also expose legacy helper so existing callsites still work
+  window.shareGlowAI = function () {
+    var url   = getShareUrl();
+    var title = getShareTitle();
+    var text  = getShareText();
+    if (navigator.share) {
+      navigator.share({ title: title, text: text, url: url }).catch(function () { legacyCopy(url); });
+    } else {
+      legacyCopy(url);
+    }
+  };
 
 })();
