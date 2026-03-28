@@ -271,6 +271,36 @@
       color: var(--muted); font-size: 0.85rem;
     }
 
+    /* ── Codeberg badges ── */
+    .cb-badges {
+      display: flex; flex-wrap: wrap; gap: 0.5rem;
+      margin-top: 1rem; margin-bottom: 0.25rem;
+    }
+    .cb-badges img { height: 20px; border-radius: 4px; }
+
+    /* ── Support / Donate ── */
+    #support { background: var(--surface2); text-align: center; }
+    .support-inner { max-width: 600px; margin: 0 auto; }
+    .support-inner p { color: var(--muted); margin-bottom: 2rem; }
+    .stripe-donate {
+      display: inline-flex; align-items: center; gap: 0.6rem;
+      padding: 0.85rem 2.2rem; border-radius: var(--radius);
+      background: linear-gradient(135deg, #635bff, #8b5cf6);
+      color: #fff; font-size: 1rem; font-weight: 700;
+      text-decoration: none; letter-spacing: 0.02em;
+      box-shadow: 0 4px 20px rgba(99,91,255,0.4);
+      transition: transform 0.18s cubic-bezier(0.4,0,0.2,1), box-shadow 0.18s;
+    }
+    .stripe-donate:hover {
+      transform: translateY(-2px);
+      box-shadow: 0 7px 28px rgba(99,91,255,0.55);
+      color: #fff; text-decoration: none;
+    }
+    .stripe-donate svg { flex-shrink: 0; }
+    .support-note {
+      margin-top: 1.1rem; font-size: 0.8rem; color: var(--muted);
+    }
+
     /* ── Responsive ── */
     @media (max-width: 640px) {
       .nav-links { display: none; }
@@ -296,6 +326,7 @@
       <li><a href="#projects">Projects</a></li>
       <li><a href="#skills">Skills</a></li>
       <li><a href="#certifications">Certs</a></li>
+      <li><a href="#support">Support</a></li>
       <li><a href="#contact">Contact</a></li>
     </ul>
   </nav>
@@ -419,6 +450,11 @@
             <li>AM/PM routine tracker with streak system</li>
             <li>6-screen PWA + native Android APK via Capacitor</li>
           </ul>
+          <div class="cb-badges">
+            <img src="https://img.shields.io/gitea/last-commit/cadger808/glowai?gitea_url=https%3A%2F%2Fcodeberg.org&label=last+commit&color=00c8ff&style=flat-square" alt="last commit" loading="lazy">
+            <img src="https://img.shields.io/gitea/license/cadger808/glowai?gitea_url=https%3A%2F%2Fcodeberg.org&style=flat-square&color=7c3aed" alt="license" loading="lazy">
+            <img src="https://img.shields.io/badge/platform-PWA%20%2B%20Android-ff6b9d?style=flat-square" alt="platform" loading="lazy">
+          </div>
           <div class="project-links">
             <a href="https://cadger808.codeberg.page/glowai" target="_blank" rel="noopener" class="project-link live">Live App</a>
             <a href="https://codeberg.org/cadger808/glowai" target="_blank" rel="noopener" class="project-link">Codeberg</a>
@@ -503,6 +539,11 @@
             <li>Privacy-first: zero server-side image retention</li>
             <li>PWA + native Android APK</li>
           </ul>
+          <div class="cb-badges">
+            <img src="https://img.shields.io/gitea/last-commit/cadger808/archertravel?gitea_url=https%3A%2F%2Fcodeberg.org&label=last+commit&color=00c8ff&style=flat-square" alt="last commit" loading="lazy">
+            <img src="https://img.shields.io/gitea/license/cadger808/archertravel?gitea_url=https%3A%2F%2Fcodeberg.org&style=flat-square&color=7c3aed" alt="license" loading="lazy">
+            <img src="https://img.shields.io/badge/privacy-zero%20retention-34d399?style=flat-square" alt="privacy" loading="lazy">
+          </div>
           <div class="project-links">
             <a href="https://cadger808.codeberg.page/archertravel" target="_blank" rel="noopener" class="project-link live">Live App</a>
             <a href="https://codeberg.org/cadger808/archertravel" target="_blank" rel="noopener" class="project-link">Codeberg</a>
@@ -693,6 +734,28 @@
           <span class="cert-year">Completed 2025</span>
         </div>
       </div>
+    </div>
+  </section>
+
+  <!-- Support / Donate -->
+  <!-- #ASSUMPTION: Stripe payment link will be set by owner — placeholder href below -->
+  <section id="support">
+    <div class="section-inner support-inner">
+      <p class="section-label">Support</p>
+      <h2 class="section-title">Buy Me a Coffee ☕</h2>
+      <p>
+        Every app here is free and open-source. If GlowAI helped your skin routine,
+        or ArcherTravel kept you safe on a trip — a small contribution keeps the
+        servers running and new apps shipping from Pearl City.
+      </p>
+      <!-- TODO: replace href with your Stripe payment link from dashboard.stripe.com/payment-links -->
+      <a href="https://buy.stripe.com/REPLACE_WITH_YOUR_LINK" target="_blank" rel="noopener" class="stripe-donate">
+        <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2">
+          <path d="M20.84 4.61a5.5 5.5 0 0 0-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 0 0-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 0 0 0-7.78z"/>
+        </svg>
+        Donate via Stripe
+      </a>
+      <p class="support-note">Secure · One-time or recurring · Powered by Stripe</p>
     </div>
   </section>
 
