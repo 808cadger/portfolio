@@ -51,3 +51,6 @@ npm run electron:dist   # Electron build
 - Email: cadger808@gmail.com
 - LinkedIn: [linkedin.com/in/christopher-cadger](https://linkedin.com/in/christopher-cadger)
 - Codeberg: [codeberg.org/cadger808](https://codeberg.org/cadger808)
+---
+
+© 2026 cadger808 — All rights reserved.
