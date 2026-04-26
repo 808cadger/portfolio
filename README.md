@@ -1,5 +1,40 @@
 # Christopher Cadger — AI Engineer Portfolio
 
+<!-- INSTALL-START -->
+## Install and run
+
+These instructions install and run `portfolio` from a fresh clone.
+
+### Clone
+```bash
+git clone https://github.com/808cadger/portfolio.git
+cd portfolio
+```
+
+### Web app
+```bash
+npm install
+python3 -m http.server 8080
+```
+
+### Desktop app
+```bash
+npm run electron
+npm run electron:dist
+```
+
+### Notes
+- Use Node.js 22 or newer for the current package set.
+
+### AI/API setup
+- If the app has AI features, add the required provider key in the app settings or local `.env` file.
+- Browser-only apps store user-provided API keys on the local device unless a backend endpoint is configured.
+
+### License
+- Apache License 2.0. See [`LICENSE`](./LICENSE).
+<!-- INSTALL-END -->
+
+
 > AI engineer based in Honolulu, Hawaii. Building and shipping production AI apps with Claude AI, Python, and computer vision.
 
 [**Live Site →**](https://cadger808.codeberg.page/portfolio) · [Resume (PDF)](https://cadger808.codeberg.page/portfolio/Christopher-Cadger-Resume.pdf) · [Codeberg](https://codeberg.org/cadger808)
