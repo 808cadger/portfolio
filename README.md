@@ -1,5 +1,12 @@
 # Christopher Cadger — AI Engineer Portfolio
 
+## Download Links
+
+- **iOS / iPhone:** Open the PWA in Safari: [Portfolio iOS install](https://808cadger.github.io/portfolio/) and choose **Share -> Add to Home Screen**.
+- **Android:** Download the latest APK from GitHub Releases: [Portfolio Android releases](https://github.com/808cadger/portfolio/releases/latest).
+- **Source download:** [Download the GitHub source ZIP](https://github.com/808cadger/portfolio/archive/refs/heads/main.zip).
+
+
 <!-- INSTALL-START -->
 ## Install and run
 
