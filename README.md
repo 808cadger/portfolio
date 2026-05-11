@@ -1,10 +1,35 @@
-# Christopher Cadger — AI Engineer Portfolio
+# Christopher Cadger AI Engineer Portfolio
+
+[![Release](https://img.shields.io/github/v/release/808cadger/portfolio?include_prereleases&label=release)](https://github.com/808cadger/portfolio/releases)
+[![Last commit](https://img.shields.io/github/last-commit/808cadger/portfolio)](https://github.com/808cadger/portfolio/commits)
+[![License](https://img.shields.io/github/license/808cadger/portfolio)](https://github.com/808cadger/portfolio/blob/HEAD/LICENSE)
+![Platforms](https://img.shields.io/badge/platform-Web%2FPWA%2C%20Desktop-2563eb)
+
+Portfolio site collecting shipped AI, mobile, PWA, computer-vision, and automation projects.
+
+## Project Snapshot
+
+| Area | Details |
+|------|---------|
+| Primary use case | Portfolio site collecting shipped AI, mobile, PWA, computer-vision, and automation projects. |
+| Platforms | Web/PWA, Desktop |
+| Core stack | HTML, CSS, JavaScript, Electron |
+| Review first | `index.html`, `package.json` |
 
 ## Download Links
 
-- **iOS / iPhone:** Open the PWA in Safari: [Portfolio iOS install](https://808cadger.github.io/portfolio/) and choose **Share -> Add to Home Screen**.
-- **Android:** Download the latest APK from GitHub Releases: [Portfolio Android releases](https://github.com/808cadger/portfolio/releases/latest).
-- **Source download:** [Download the GitHub source ZIP](https://github.com/808cadger/portfolio/archive/refs/heads/main.zip).
+| Platform | Link |
+|----------|------|
+| iOS / iPhone | [Open the PWA in Safari](https://808cadger.github.io/portfolio/) and choose **Share -> Add to Home Screen** |
+| Android | [Download the latest APK from GitHub Releases](https://github.com/808cadger/portfolio/releases/latest) |
+| Source | [Download the GitHub source ZIP](https://github.com/808cadger/portfolio/archive/refs/heads/main.zip) |
+| Repository | [View on GitHub](https://github.com/808cadger/portfolio) |
+
+## Why This Repo Is Worth Reviewing
+
+- Central index for the app suite and recruiter review.
+- Static deployment keeps the portfolio fast and portable.
+- Documents cross-platform AI project breadth in one place.
 
 
 <!-- INSTALL-START -->
